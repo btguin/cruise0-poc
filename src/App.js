@@ -42,7 +42,7 @@ const App = () => {
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
 
   const handleLogout = () => {
-    logout({ returnTo: 'https://cruise0-poc.vercel.app' }); // Replace with your actual Vercel URL
+    logout({ returnTo: window.location.origin }); 
   };
 
   if (isLoading) return <Container><CircularProgress /></Container>;
@@ -62,6 +62,7 @@ const App = () => {
             <div style={{ marginTop: '20px' }}>
               <Typography variant="h5">{user.name}</Typography>
               <Typography variant="subtitle1">Email: {user.email}</Typography>
+              <Typography variant="subtitle2">User ID: {user.sub}</Typography>
             </div>
           </>
         )}
@@ -71,4 +72,3 @@ const App = () => {
 };
 
 export default App;
-
