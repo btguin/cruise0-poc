@@ -15,7 +15,7 @@ root.render(
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri="https://cruise0-poc.vercel.app"
+      redirectUri={window.location.origin}
     >
           <App />
     </Auth0Provider>
