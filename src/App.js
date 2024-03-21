@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button, CircularProgress, Container, Typography, Alert, Avatar } from '@mui/material'; // Import Avatar from MUI
+import { Button, CircularProgress, Container, Typography, Alert } from '@mui/material'; 
 
 const App = () => {
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
@@ -26,7 +26,6 @@ const App = () => {
     loginWithRedirect();
   };
 
-  // Function to handle sign up
   const handleSignUp = () => {
     loginWithRedirect({ screen_hint: 'signup' });
   };
@@ -35,12 +34,12 @@ const App = () => {
 
   return (
     <Container style={{
-      display: 'flex', // Enables flexbox
-      flexDirection: 'column', // Stacks children vertically
-      justifyContent: 'center', // Centers children vertically in the container
-      alignItems: 'center', // Centers children horizontally in the container
-      height: '100vh', // Makes the container take up the full viewport height
-      textAlign: 'center', // Centers text
+      display: 'flex', 
+      flexDirection: 'column', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      height: '100vh', 
+      textAlign: 'center', 
     }}>
       <header>
         {errorMessage && (
@@ -61,7 +60,6 @@ const App = () => {
               Log Out
             </Button>
             <div style={{ marginTop: '20px' }}>
-            {user.picture && <Avatar src={user.picture} alt={user.name} style={{ margin: 'auto', marginBottom: '20px' }} />}
               <Typography variant="h5">{user.name}</Typography>
               <Typography variant="subtitle1">Email: {user.email}</Typography>
               <Typography variant="subtitle2">User ID: {user.sub}</Typography>
