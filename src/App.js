@@ -27,8 +27,12 @@ const App = () => {
   };
 
   const handleSignUp = () => {
-    loginWithRedirect({ screen_hint: 'signup' });
-  };
+    loginWithRedirect({
+        authorizationParams: {
+            screen_hint: 'signup'
+        }
+    });
+};
 
   if (isLoading) return <Container><CircularProgress /></Container>;
 
@@ -43,7 +47,7 @@ const App = () => {
     }}>
       <header>
         {errorMessage && (
-          <Alert severity="error" style={{ marginBottom: '20px' }}>{errorMessage}</Alert>
+          <Alert severity="info" style={{ marginBottom: '20px' }}>{errorMessage}</Alert>
         )}
         {!isAuthenticated ? (
           <>
