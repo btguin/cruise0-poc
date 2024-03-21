@@ -26,9 +26,13 @@ const App = () => {
     loginWithRedirect();
   };
 
-  // Function to handle sign up
+  // Updated function to handle sign up
   const handleSignUp = () => {
-    loginWithRedirect({ screen_hint: 'signup' });
+    loginWithRedirect({
+      authorizationParams: {
+        screen_hint: 'signup',
+      },
+    });
   };
 
   if (isLoading) return <Container><CircularProgress /></Container>;
