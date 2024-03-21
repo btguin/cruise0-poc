@@ -65,7 +65,6 @@ const App = () => {
             </Button>
             <div style={{ marginTop: '20px' }}>
               <Typography variant="h5">{user.name}</Typography>
-              <Typography variant="subtitle1">Email: {user.email}</Typography>
               <Typography variant="subtitle2">User ID: {user.sub}</Typography>
             </div>
           </>
